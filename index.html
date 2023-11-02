@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Line Pls</title>
+    <style>
+        #terminal {
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+        <p>Welcome to the Command Line Site</p>
+        <input type="text" id="commandInput" placeholder="Type a command...">
+        <button onclick="executeCommand()">Enter</button>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        function executeCommand() {
+            const commandInput = document.getElementById('commandInput');
+            const output = document.getElementById('output');
+            const command = commandInput.value.toLowerCase();
+
+            // Check different commands
+            if (command === 'home') {
+                output.innerHTML = 'Navigating to the home page...';
+                // Redirect to the home page or perform any action here
+            } else if (command === 'about') {
+                output.innerHTML = 'Navigating to the about page...';
+                // Redirect to the about page or perform any action here
+            } else {
+                output.innerHTML = 'Command not recognized. Please enter a valid command.';
+            }
+
+            // Clear input after executing the command
+            commandInput.value = '';
+        }
+    </script>
+</body>
+</html>
