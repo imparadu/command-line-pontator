@@ -15,3 +15,11 @@ Detaliat:
 4 = opreste timeru pentru useru selectat
 5 = creeaza un obiect cu data si timpu timerului. contine si user
 6 = afiseaza doar datele la care se ponteaza. doar pentru useru selectat
+
+
+1. show G/R timer
+2. start G/R timer
+3. pause
+4. stop
+5. show G/R 'month' 
+6. ponteaza
