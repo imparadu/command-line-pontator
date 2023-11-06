@@ -1,0 +1,17 @@
+Functionalitati:
+1. totu merge din command line
+2. sa porneasca timer pentru user
+3. sa puna pauza timerului
+4. sa opreasca timeru
+5. sa ponteze in calendar
+6. sa afiseze calendar (per user)
+
+Detaliat:
+1 = facuta lista de comenzi / sa afiseze dinamic(nu trece in alt .html)
+    sterge continut / genereaza continut 
+2 = start timer pentru user specificat (start timer for G/R). 
+    afiseaza timeru si il porneste. arata si G/R asociat timerului
+3 = pune pauza pentru orice timer(user) care merge
+4 = opreste timeru pentru useru selectat
+5 = creeaza un obiect cu data si timpu timerului. contine si user
+6 = afiseaza doar datele la care se ponteaza. doar pentru useru selectat
