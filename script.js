@@ -19,7 +19,9 @@ function executeCommand() {
   } else if (command === "about") {
     output.innerHTML = "Navigating to the about page...";
   } else if (command === "list") {
-    output.innerHTML = list;
+    output.innerHTML = "";
+    paragraph.innerHTML = list;
+    output.appendChild(paragraph);
   } else if (command === "timer") {
     output.appendChild(createTimer());
   } else if (command === "timer start") {
