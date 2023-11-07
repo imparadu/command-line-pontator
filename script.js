@@ -78,9 +78,9 @@ function createTimer() {
   return timerParagraph;
 }
 
-const hours = 0;
-const minutes = 0;
-const seconds = 0;
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
 let Interval;
 
 function start() {
