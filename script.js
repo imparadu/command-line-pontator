@@ -1,5 +1,5 @@
 const list =
-  "home - takes you to the home page.\nabout - takes you to the about page.\n timer - shows timer?";
+  "home - takes you to the home page.\nabout - takes you to the about page.\n timer - shows timer.\ntimer start - starts the timer.\ntimer stop - stops the timer.\ntimer reset - resets the timer.";
 
 const output = document.getElementById("output");
 const paragraph = document.createElement("p");
@@ -13,7 +13,7 @@ function executeCommand() {
 
   // Check different commands
   if (command === "home") {
-    output.innerHTML = ''
+    output.innerHTML = "";
     paragraph.innerHTML = "Navigating to the home page...\nnot";
     output.appendChild(paragraph);
   } else if (command === "about") {
@@ -22,6 +22,15 @@ function executeCommand() {
     output.innerHTML = list;
   } else if (command === "timer") {
     output.appendChild(createTimer());
+  } else if (command === "timer start") {
+    output.appendChild(createTimer());
+    start();
+  } else if (command === "timer stop") {
+    output.appendChild(createTimer());
+    stop();
+  } else if (command === "timer reset") {
+    output.appendChild(createTimer());
+    reset();
   } else {
     output.innerHTML = "Command not recognized. Please enter a valid command.";
   }
@@ -35,26 +44,27 @@ function handleKeyPress(event) {
     executeCommand();
   }
 }
+
+const timerParagraph = document.createElement("p");
+timerParagraph.setAttribute("id", "timer");
+
+const spanHours = document.createElement("span");
+spanHours.setAttribute("id", "hours");
+spanHours.textContent = "00";
+
+const spanMinutes = document.createElement("span");
+spanMinutes.setAttribute("id", "minutes");
+spanMinutes.textContent = "00";
+
+const spanSeconds = document.createElement("span");
+spanSeconds.setAttribute("id", "seconds");
+spanSeconds.textContent = "00";
+
+const colon1 = document.createTextNode(":");
+const colon2 = document.createTextNode(":");
 // createTimer()
 function createTimer() {
-    output.innerHTML = ''
-  const timerParagraph = document.createElement("p");
-  timerParagraph.setAttribute("id", "timer");
-
-  const spanHours = document.createElement("span");
-  spanHours.setAttribute("id", "hours");
-  spanHours.textContent = "00";
-
-  const spanMinutes = document.createElement("span");
-  spanMinutes.setAttribute("id", "minutes");
-  spanMinutes.textContent = "00";
-
-  const spanSeconds = document.createElement("span");
-  spanSeconds.setAttribute("id", "seconds");
-  spanSeconds.textContent = "00";
-
-  const colon1 = document.createTextNode(":");
-  const colon2 = document.createTextNode(":");
+  output.innerHTML = "";
 
   timerParagraph.appendChild(spanHours);
   timerParagraph.appendChild(colon1);
@@ -64,4 +74,61 @@ function createTimer() {
 
   output.appendChild(timerParagraph);
   return timerParagraph;
+}
+
+const hours = 0;
+const minutes = 0;
+const seconds = 0;
+let Interval;
+
+function start() {
+  clearInterval(Interval);
+  Interval = setInterval(startTimer, 1000);
+}
+
+function stop() {
+  clearInterval(Interval);
+}
+
+function reset() {
+  clearInterval(Interval);
+  hours = "00";
+  minutes = "00";
+  seconds = "00";
+  spanHours.textContent = hours;
+  spanMinutes.textContent = minutes;
+  spanSeconds.textContent = seconds;
+}
+
+function startTimer() {
+  seconds++;
+
+  if (seconds <= 9) {
+    spanSeconds.textContent = "0" + seconds;
+  }
+
+  if (seconds > 9) {
+    spanSeconds.textContent = seconds;
+  }
+
+  if (seconds > 59) {
+    minutes++;
+    spanMinutes.textContent = "0" + minutes;
+    seconds = 0;
+    spanSeconds.textContent = "0" + 0;
+  }
+
+  if (minutes <= 9 && spanMinutes.textContent.length < 2) {
+    spanMinutes.textContent = "0" + minutes;
+  }
+
+  if (minutes > 9) {
+    spanMinutes.textContent = minutes;
+  }
+  if (minutes > 59) {
+    hours++;
+    spanHours.textContent = "0" + hours;
+    minutes = 0;
+    spanMinutes.textContent = "0" + 0;
+  }
 }
