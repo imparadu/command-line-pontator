@@ -1,5 +1,5 @@
 const list =
-  "home - takes you to the home page.\nabout - takes you to the about page.\n timer - shows timer.\ntimer start - starts the timer.\ntimer stop - stops the timer.\ntimer reset - resets the timer.";
+  `home - takes you to the home page.\nabout - takes you to the about page.\n timer - shows timer.\ntimer start - starts the timer.\ntimer stop - stops the timer.\ntimer reset - resets the timer.\nchange color to "color" (type in your desired color)` ;
 
 const output = document.getElementById("output");
 const paragraph = document.createElement("p");
@@ -17,7 +17,9 @@ function executeCommand() {
     paragraph.innerHTML = "Navigating to the home page...\nnot";
     output.appendChild(paragraph);
   } else if (command === "about") {
-    output.innerHTML = "Navigating to the about page...";
+    output.innerHTML = "";
+    paragraph.innerHTML = "Navigating to the about page...";
+    output.appendChild(paragraph);
   } else if (command === "list") {
     output.innerHTML = "";
     paragraph.innerHTML = list;
@@ -33,8 +35,14 @@ function executeCommand() {
   } else if (command === "timer reset") {
     output.appendChild(createTimer());
     reset();
+  } else if (command === `change color to ${selectLastWord()}`) {
+    console.log(selectLastWord());
+    changeColor(selectLastWord());
   } else {
-    output.innerHTML = "Command not recognized. Please enter a valid command.";
+    output.innerHTML = "";
+    paragraph.innerHTML = `Unknown command. Please refer to the command list. Type "list" to see available commands.`;
+    output.appendChild(paragraph);
+    // changeColor(selectLastWord());
   }
 
   // Clear input after executing the command
@@ -134,3 +142,29 @@ function startTimer() {
     spanMinutes.textContent = "0" + 0;
   }
 }
+
+function changeColor(getBackgroundColor) {
+  var element = document.querySelector("body");
+
+  element.style.backgroundColor = getBackgroundColor;
+}
+
+function selectLastWord() {
+  const inputText = document.getElementById("commandInput").value;
+
+  // Split the input value by spaces to get an array of words
+  const words = inputText.split(" ");
+
+  // Get the last word
+  const lastWord = words[words.length - 1];
+
+  // Set the selection range in the input field
+  const inputElement = document.getElementById("commandInput");
+  inputElement.setSelectionRange(
+    inputText.lastIndexOf(lastWord),
+    inputText.length
+  );
+  return lastWord;
+}
+
+let getBackgroundColor = selectLastWord();
