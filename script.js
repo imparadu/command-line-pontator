@@ -1,15 +1,24 @@
-const list =
-  `home - takes you to the home page.\nabout - takes you to the about page.\n timer - shows timer.\ntimer start - starts the timer.\ntimer stop - stops the timer.\ntimer reset - resets the timer.\nchange color to "color" - changes the background color(type in your desired color)` ;
+const list = `home - takes you to the home page.
+about - takes you to the about page.
+timer - shows timer.
+timer start - starts the timer.
+timer stop - stops the timer.
+timer reset - resets the timer.
+change color to "color" - changes the background color(type in your desired color)`;
+
+// Split the list by line breaks (\n)
+const lines = list.split("\n");
 
 const output = document.getElementById("output");
 const paragraph = document.createElement("p");
-paragraph.innerHTML = "type list to see all available commands";
+paragraph.setAttribute("id", "paragraph");
+paragraph.innerHTML = `type "list" or "help" to see all available commands`;
 output.appendChild(paragraph);
 
 function executeCommand() {
   const commandInput = document.getElementById("commandInput");
   const output = document.getElementById("output");
-  const command = commandInput.value//.toLowerCase();
+  const command = commandInput.value; //.toLowerCase();
 
   // Check different commands
   if (command === "home") {
@@ -20,10 +29,11 @@ function executeCommand() {
     output.innerHTML = "";
     paragraph.innerHTML = "Navigating to the about page...";
     output.appendChild(paragraph);
-  } else if (command === "list") {
+  } else if (command === "list" || command === "help") {
     output.innerHTML = "";
-    paragraph.innerHTML = list;
-    output.appendChild(paragraph);
+    // paragraph.innerHTML = list;
+    // output.appendChild(paragraph);
+    firstWordStyle();
   } else if (command === "timer") {
     output.appendChild(createTimer());
   } else if (command === "timer start") {
@@ -43,7 +53,6 @@ function executeCommand() {
     paragraph.innerHTML = `Unknown command. Please refer to the command list. Type "list" to see available commands.`;
     output.appendChild(paragraph);
     console.log(selectLastWord());
-    // changeColor(selectLastWord());
   }
 
   // Clear input after executing the command
@@ -150,6 +159,28 @@ function changeColor(getBackgroundColor) {
   element.style.backgroundColor = getBackgroundColor;
 }
 
+function firstWordStyle() {
+  output.appendChild(paragraph)
+  var span = document.createElement('span')
+  span.setAttribute('id', 'highlightedWords')
+  paragraph.appendChild(span)
+  span.textContent = 'ciocan'
+  const senil = paragraph.textContent.split("\n");
+  paragraph.textContent = list
+  const firstWords = senil.map((line) => {
+    const words = line.trim().split(" - "); // Split the line by spaces
+    return words[0]; // Get the first word
+  });
+  const lastWords = senil.map((line) => {
+    const words = line.trim().split(" - "); // Split the line by spaces
+    return words[1]; // Get the first word
+  });
+  const both = firstWords + lastWords
+  // test.innerText = firstWords
+  // paragraph.innerHTML = firstWords
+  console.log(paragraph);
+}
+
 function selectLastWord() {
   const inputText = document.getElementById("commandInput").value;
 
@@ -168,4 +199,23 @@ function selectLastWord() {
   return lastWord;
 }
 
+// function selectFirstWord() {
+//   const inputText = document.getElementById("paragraph");
+
+//   // Split the input value by spaces to get an array of words
+//   const words = inputText.split(" ");
+
+//   // Get the first word
+//   const firstWord = words[0];
+
+//   // Set the selection range in the input field
+//   const inputElement = document.getElementById("paragraph");
+//   inputElement.setSelectionRange(
+//     inputText.lastIndexOf(firstWord),
+//     inputText.length
+//   );
+//   return firstWord;
+// }
+
+// let firstWord = selectFirstWord();
 let getBackgroundColor = selectLastWord();
