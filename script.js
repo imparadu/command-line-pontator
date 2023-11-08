@@ -1,5 +1,5 @@
 const list =
-  `home - takes you to the home page.\nabout - takes you to the about page.\n timer - shows timer.\ntimer start - starts the timer.\ntimer stop - stops the timer.\ntimer reset - resets the timer.\nchange color to "color" (type in your desired color)` ;
+  `home - takes you to the home page.\nabout - takes you to the about page.\n timer - shows timer.\ntimer start - starts the timer.\ntimer stop - stops the timer.\ntimer reset - resets the timer.\nchange background color to "color" (type in your desired color)` ;
 
 const output = document.getElementById("output");
 const paragraph = document.createElement("p");
