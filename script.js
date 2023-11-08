@@ -1,13 +1,12 @@
-const list = `home - takes you to the home page.
-about - takes you to the about page.
-timer - shows timer.
-timer start - starts the timer.
-timer stop - stops the timer.
-timer reset - resets the timer.
-change color to "color" - changes the background color(type in your desired color)`;
-
-// Split the list by line breaks (\n)
-const lines = list.split("\n");
+const list = [
+  "home - takes you to the home page.",
+  "about - takes you to the about page.",
+  "timer - shows timer.",
+  "timer start - starts the timer.",
+  "timer stop - stops the timer.",
+  "timer reset - resets the timer.",
+  'change color to "color" - changes the background color(type in your desired color)',
+];
 
 const output = document.getElementById("output");
 const paragraph = document.createElement("p");
@@ -96,89 +95,67 @@ function createTimer() {
   return timerParagraph;
 }
 
-let hours = 0;
-let minutes = 0;
-let seconds = 0;
-let Interval;
+// // DE AICI INCEPE CEASU
+// let hours = 0;
+// let minutes = 0;
+// let seconds = 0;
+// let Interval;
 
-function start() {
-  clearInterval(Interval);
-  Interval = setInterval(startTimer, 1000);
-}
+// function start() {
+//   clearInterval(Interval);
+//   Interval = setInterval(startTimer, 1000);
+// }
 
-function stop() {
-  clearInterval(Interval);
-}
+// function stop() {
+//   clearInterval(Interval);
+// }
 
-function reset() {
-  clearInterval(Interval);
-  hours = "00";
-  minutes = "00";
-  seconds = "00";
-  spanHours.textContent = hours;
-  spanMinutes.textContent = minutes;
-  spanSeconds.textContent = seconds;
-}
+// function reset() {
+//   clearInterval(Interval);
+//   hours = "00";
+//   minutes = "00";
+//   seconds = "00";
+//   spanHours.textContent = hours;
+//   spanMinutes.textContent = minutes;
+//   spanSeconds.textContent = seconds;
+// }
 
-function startTimer() {
-  seconds++;
+// function startTimer() {
+//   seconds++;
 
-  if (seconds <= 9) {
-    spanSeconds.textContent = "0" + seconds;
-  }
+//   if (seconds <= 9) {
+//     spanSeconds.textContent = "0" + seconds;
+//   }
 
-  if (seconds > 9) {
-    spanSeconds.textContent = seconds;
-  }
+//   if (seconds > 9) {
+//     spanSeconds.textContent = seconds;
+//   }
 
-  if (seconds > 59) {
-    minutes++;
-    spanMinutes.textContent = "0" + minutes;
-    seconds = 0;
-    spanSeconds.textContent = "0" + 0;
-  }
+//   if (seconds > 59) {
+//     minutes++;
+//     spanMinutes.textContent = "0" + minutes;
+//     seconds = 0;
+//     spanSeconds.textContent = "0" + 0;
+//   }
 
-  if (minutes <= 9 && spanMinutes.textContent.length < 2) {
-    spanMinutes.textContent = "0" + minutes;
-  }
+//   if (minutes <= 9 && spanMinutes.textContent.length < 2) {
+//     spanMinutes.textContent = "0" + minutes;
+//   }
 
-  if (minutes > 9) {
-    spanMinutes.textContent = minutes;
-  }
-  if (minutes > 59) {
-    hours++;
-    spanHours.textContent = "0" + hours;
-    minutes = 0;
-    spanMinutes.textContent = "0" + 0;
-  }
-}
+//   if (minutes > 9) {
+//     spanMinutes.textContent = minutes;
+//   }
+//   if (minutes > 59) {
+//     hours++;
+//     spanHours.textContent = "0" + hours;
+//     minutes = 0;
+//     spanMinutes.textContent = "0" + 0;
+//   }
+// }
 
 function changeColor(getBackgroundColor) {
   var element = document.querySelector("body");
-
   element.style.backgroundColor = getBackgroundColor;
-}
-
-function firstWordStyle() {
-  output.appendChild(paragraph)
-  var span = document.createElement('span')
-  span.setAttribute('id', 'highlightedWords')
-  paragraph.appendChild(span)
-  span.textContent = 'ciocan'
-  const senil = paragraph.textContent.split("\n");
-  paragraph.textContent = list
-  const firstWords = senil.map((line) => {
-    const words = line.trim().split(" - "); // Split the line by spaces
-    return words[0]; // Get the first word
-  });
-  const lastWords = senil.map((line) => {
-    const words = line.trim().split(" - "); // Split the line by spaces
-    return words[1]; // Get the first word
-  });
-  const both = firstWords + lastWords
-  // test.innerText = firstWords
-  // paragraph.innerHTML = firstWords
-  console.log(paragraph);
 }
 
 function selectLastWord() {
@@ -199,23 +176,30 @@ function selectLastWord() {
   return lastWord;
 }
 
-// function selectFirstWord() {
-//   const inputText = document.getElementById("paragraph");
-
-//   // Split the input value by spaces to get an array of words
-//   const words = inputText.split(" ");
-
-//   // Get the first word
-//   const firstWord = words[0];
-
-//   // Set the selection range in the input field
-//   const inputElement = document.getElementById("paragraph");
-//   inputElement.setSelectionRange(
-//     inputText.lastIndexOf(firstWord),
-//     inputText.length
-//   );
-//   return firstWord;
-// }
-
-// let firstWord = selectFirstWord();
 let getBackgroundColor = selectLastWord();
+
+function firstWordStyle() {
+  const ul = document.createElement("ul");
+  output.appendChild(ul);
+  list.forEach((el) => {
+    const firstSpan = document.createElement("span");
+    firstSpan.setAttribute("class", "highlightedWords");
+    const secondSpan = document.createElement("span");
+
+    const strings = el.split(" - ");
+    const firstString = strings[0];
+    const secondString = ` - ${strings[1]}`;
+  
+
+    firstSpan.textContent = firstString;
+    secondSpan.textContent = secondString;
+    console.log(typeof firstElements);
+    const li = document.createElement("li");
+
+    ul.appendChild(li);
+    li.appendChild(firstSpan);
+    li.appendChild(secondSpan);
+  });
+}
+
+console.log(objectForAllF)

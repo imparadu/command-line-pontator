@@ -37,7 +37,13 @@ p {
   line-height: 1.4rem;
 }
 
-#highlightedWords {
+.highlightedWords {
   font-weight: bold;
   color: #9400d3;
+
 }
+ul {
+    list-style: none;
+    line-height: 1.4rem;
+    padding: 5px;
+  }

@@ -1,20 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Command Line Pls</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
     <div id="terminal">
-        <h4>Welcome to the Command Line Site</h4>
-        <input type="text" id="commandInput" placeholder="Type a command..."  onkeypress="handleKeyPress(event)">
-        <button onclick="executeCommand()">Enter</button>
-        
-        <div id="output"></div>
+      <h4>Welcome to the Command Line Site</h4>
+      <input
+        type="text"
+        id="commandInput"
+        placeholder="Type a command..."
+        onkeypress="handleKeyPress(event)"
+      />
+      <button onclick="executeCommand()">Enter</button>
+
+      <div id="output"></div>
     </div>
-    
-</body>
-    <script src="script.js"></script>
+  </body>
+  <script src="timer.js"></script>
+  <script src="script.js"></script>
 </html>
