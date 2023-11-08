@@ -9,7 +9,7 @@ output.appendChild(paragraph);
 function executeCommand() {
   const commandInput = document.getElementById("commandInput");
   const output = document.getElementById("output");
-  const command = commandInput.value.toLowerCase();
+  const command = commandInput.value//.toLowerCase();
 
   // Check different commands
   if (command === "home") {
@@ -42,6 +42,7 @@ function executeCommand() {
     output.innerHTML = "";
     paragraph.innerHTML = `Unknown command. Please refer to the command list. Type "list" to see available commands.`;
     output.appendChild(paragraph);
+    console.log(selectLastWord());
     // changeColor(selectLastWord());
   }
 
