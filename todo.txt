@@ -7,3 +7,13 @@
     5. colecteaza timp din timer si il adauga
 
     obj = {id: 0, nume: G, data_curenta: yyyy/mm/dd, timp: xx:xx:xx}
+
+let tempObj = {date: 0, ore: 0}
+
+    if(name === 'george') {
+        
+        tempObj = { date: "data_curenta", ore: "nr_de_ore" }
+    }
+=>
+    name: "george",
+    dates: [{ date: "data_curenta", ore: "nr_de_ore" }],

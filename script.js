@@ -8,6 +8,7 @@ const list = [
   'change color to "color" - changes the background color(type in your desired color)',
 ];
 
+let lastWord
 const output = document.getElementById("output");
 const paragraph = document.createElement("p");
 paragraph.setAttribute("id", "paragraph");

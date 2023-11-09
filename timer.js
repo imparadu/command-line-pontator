@@ -69,4 +69,4 @@ function createTimer() {
   return timerParagraph;
 }
 
-const objectForAllF = { startTimer, reset, stop, start, createTimer }
+const objectForAllF = { startTimer, reset, stop, start, createTimer };
