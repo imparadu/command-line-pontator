@@ -1,7 +1,6 @@
 function changeColor(getBackgroundColor) {
   var element = document.querySelector("body");
   element.style.backgroundColor = lastWord;
-  console.log(output)
 }
 
 function selectLastWord() {

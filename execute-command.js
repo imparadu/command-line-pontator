@@ -1,7 +1,7 @@
 function executeCommand() {
   const commandInput = document.getElementById("commandInput");
   const command = commandInput.value; //.toLowerCase();
-  
+  lastWord = selectLastWord();
 
   // Check different commands
   if (command === "home") {
@@ -29,14 +29,16 @@ function executeCommand() {
     reset();
   } else if (command === `change color to ${lastWord}`) {
       changeColor(lastWord);
+    
+  } else if (command === `add timer to ${lastWord}`) {
+    pontez(lastWord);
+    
     } else {
         output.innerHTML = "";
         paragraph.innerHTML = `Unknown command. Please refer to the command list. Type "list" to see available commands.`;
         output.appendChild(paragraph);
-        random()
-    selectLastWord();
-    
-  }
+        selectLastWord();
+    }
 
   // Clear input after executing the command
   commandInput.value = ``;
