@@ -6,7 +6,7 @@ let Interval;
 
 function start() {
   clearInterval(Interval);
-  Interval = setInterval(startTimer, 1);
+  Interval = setInterval(startTimer, 1000);
 }
 
 function stop() {
@@ -56,4 +56,17 @@ function startTimer() {
   }
 }
 
-const objectForAllF = { startTimer, reset, stop, start }
+function createTimer() {
+  output.innerHTML = "";
+
+  timerParagraph.appendChild(spanHours);
+  timerParagraph.appendChild(colon1);
+  timerParagraph.appendChild(spanMinutes);
+  timerParagraph.appendChild(colon2);
+  timerParagraph.appendChild(spanSeconds);
+
+  output.appendChild(timerParagraph);
+  return timerParagraph;
+}
+
+const objectForAllF = { startTimer, reset, stop, start, createTimer }

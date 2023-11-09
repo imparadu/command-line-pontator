@@ -1,1 +1,9 @@
-[] arhitectura generala a siteului 
+[] functie obiect:
+    0. creeaza obiect cu date
+    1. stop()
+    2. adauga id(0/1)
+    3. adauga nume
+    4. genereaza data curenta si o adauga 
+    5. colecteaza timp din timer si il adauga
+
+    obj = {id: 0, nume: G, data_curenta: yyyy/mm/dd, timp: xx:xx:xx}
