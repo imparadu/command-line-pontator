@@ -32,13 +32,14 @@ function executeCommand() {
     
   } else if (command === `add timer to ${lastWord}`) {
     pontez(lastWord);
-    
-    } else {
-        output.innerHTML = "";
-        paragraph.innerHTML = `Unknown command. Please refer to the command list. Type "list" to see available commands.`;
-        output.appendChild(paragraph);
-        selectLastWord();
-    }
+  } else if (command === `show ${lastWord}`) {
+    show(lastWord);
+  } else {
+    output.innerHTML = '';
+    paragraph.innerHTML = `Unknown command. Please refer to the command list. Type "list" to see available commands.`;
+    output.appendChild(paragraph);
+    selectLastWord();
+  }
 
   // Clear input after executing the command
   commandInput.value = ``;

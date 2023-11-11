@@ -1,11 +1,12 @@
 // const obj = [
-//   { id: 1, name: "radu", dates: [{ date: "data_curenta", ore: "nr_de_ore" }] },
+//   { id: 1, name: "radu", dates: [] },
 //   {
 //     id: 2,
 //     name: "george",
-//     dates: [{ date: "data_curenta", ore: "nr_de_ore" }],
+//     dates: [],
 //   },
 // ];
+// localStorage.setItem('dataBase', JSON.stringify(obj));
 const obj = JSON.parse(localStorage.getItem("dataBase"))
 
 function pontez() {
@@ -15,12 +16,12 @@ function pontez() {
   let tempObj = { date: localDate, ore: `${spanHours.innerText}:${spanMinutes.innerText}:${spanSeconds.innerText}` };
   
   obj.find((x) => x.name === lastWord).dates.push(tempObj);
-  
+  //salveaza "database" in localStorage
   localStorage.setItem("dataBase", JSON.stringify(obj));
 }
 
 const dataBase = localStorage.getItem("dataBase");
-// console.log(dataBase)
+
 function returnFormattedDate(){
   var currentDate = new Date();
 
@@ -39,7 +40,5 @@ function returnFormattedDate(){
   return formattedDate  
 }
 let localDate = returnFormattedDate()
-console.log(obj)
-obj.forEach(element => {
-  element.dates
-});
+// console.log(obj)
+

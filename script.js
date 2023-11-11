@@ -6,6 +6,8 @@ const list = [
   "timer stop - stops the timer.",
   "timer reset - resets the timer.",
   'change color to "color" - changes the background color(type in your desired color)',
+  'add timer to "user" - adds the accumulated time and current date to user',
+  'show "user" - displays date and time of selected user',
 ];
 
 let lastWord

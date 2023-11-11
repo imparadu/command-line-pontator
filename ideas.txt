@@ -1,0 +1,10 @@
+galerie carousel
+dropdown 
+search bar
+product containers
+play video
+creare / salvare formular
+shopping cart
+user settings
+login
+
