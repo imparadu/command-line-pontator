@@ -25,11 +25,12 @@ button {
 
 #terminal {
   width: 80%;
-  margin: 20px auto;
+  margin: 20px 20px;
   border: 1px solid #ccc;
+  border-radius: 5px;
   padding: 10px;
   font-family: Consolas, "Courier New", monospace;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 p {
@@ -39,8 +40,8 @@ p {
 
 .highlightedWords {
   font-weight: bold;
-  color: #9400d3;
-
+  color: #7701a9;
+  ;
 }
 ul {
     list-style: none;
