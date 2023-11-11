@@ -18,6 +18,7 @@ function pontez() {
   obj.find((x) => x.name === lastWord).dates.push(tempObj);
   //salveaza "database" in localStorage
   localStorage.setItem("dataBase", JSON.stringify(obj));
+  reset()
 }
 
 const dataBase = localStorage.getItem("dataBase");
