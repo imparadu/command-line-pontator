@@ -18,13 +18,13 @@ function executeCommand() {
     firstWordStyle();
   } else if (command === "timer") {
     output.appendChild(createTimer());
-  } else if (command === "timer start" && command === "start timer") {
+  } else if (command === "timer start" || command === "start timer") {
     output.appendChild(createTimer());
     start();
-  } else if (command === "timer stop" && command === "stop timer") {
+  } else if (command === "timer stop" || command === "stop timer") {
     output.appendChild(createTimer());
     stop();
-  } else if (command === "timer reset" && command === "reset timer") {
+  } else if (command === "timer reset" || command === "reset timer") {
     output.appendChild(createTimer());
     reset();
   } else if (command === `change color to ${lastWord}`) {
