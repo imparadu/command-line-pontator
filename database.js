@@ -1,13 +1,13 @@
-// const obj = [
-//   { id: 1, name: "radu", dates: [] },
-//   {
-//     id: 2,
-//     name: "george",
-//     dates: [],
-//   },
-// ];
+const obj = [
+  { id: 1, name: "radu", dates: [] },
+  {
+    id: 2,
+    name: "george",
+    dates: [],
+  },
+];
 // localStorage.setItem('dataBase', JSON.stringify(obj));
-const obj = JSON.parse(localStorage.getItem("dataBase"))
+// const obj = JSON.parse(localStorage.getItem("dataBase"))
 
 function pontez() {
   stop();
