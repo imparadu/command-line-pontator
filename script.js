@@ -1,16 +1,16 @@
 const list = [
-  "home - takes you to the home page.",
-  "about - takes you to the about page.",
+  // "home - takes you to the home page.",
+  // "about - takes you to the about page.",
   "timer - shows timer.",
-  "timer start - starts the timer.",
-  "timer stop - stops the timer.",
-  "timer reset - resets the timer.",
-  'change color to "color" - changes the background color(type in your desired color)',
+  "start timer  - starts the timer.",
+  "stop timer - stops the timer.",
+  "reset timer  - resets the timer.",
   'add timer to "user" - adds the accumulated time and current date to user',
   'show "user" - displays date and time of selected user',
+  'change color to "color" - changes the background color(type in your desired color)',
 ];
 
-let lastWord
+let lastWord;
 const output = document.getElementById("output");
 const paragraph = document.createElement("p");
 paragraph.setAttribute("id", "paragraph");

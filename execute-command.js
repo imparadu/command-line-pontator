@@ -18,24 +18,23 @@ function executeCommand() {
     firstWordStyle();
   } else if (command === "timer") {
     output.appendChild(createTimer());
-  } else if (command === "timer start") {
+  } else if (command === "timer start" && command === "start timer") {
     output.appendChild(createTimer());
     start();
-  } else if (command === "timer stop") {
+  } else if (command === "timer stop" && command === "stop timer") {
     output.appendChild(createTimer());
     stop();
-  } else if (command === "timer reset") {
+  } else if (command === "timer reset" && command === "reset timer") {
     output.appendChild(createTimer());
     reset();
   } else if (command === `change color to ${lastWord}`) {
-      changeColor(lastWord);
-    
+    changeColor(lastWord);
   } else if (command === `add timer to ${lastWord}`) {
     pontez(lastWord);
   } else if (command === `show ${lastWord}`) {
     show(lastWord);
   } else {
-    output.innerHTML = '';
+    output.innerHTML = "";
     paragraph.innerHTML = `Unknown command. Please refer to the command list. Type "list" to see available commands.`;
     output.appendChild(paragraph);
     selectLastWord();
@@ -50,5 +49,3 @@ function handleKeyPress(event) {
     executeCommand();
   }
 }
-
-
