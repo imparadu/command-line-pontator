@@ -1,4 +1,5 @@
-1. create function to return database obj and make a list with it
-2. optimise prompt commands to accept multiple ways of doing the same action
-3. add start/ stop/ pontaj effect
-4. add typewriter effect - copiat efectul de pe chatGPT
+[x] create function to return database obj and make a list with it
+[] optimise prompt commands to accept multiple ways of doing the same action
+[] add start/ stop/ pontaj effect
+[] add typewriter effect - copiat efectul de pe chatGPT
+[] add new user to obj when user doesn't exist (add timer to raul)
